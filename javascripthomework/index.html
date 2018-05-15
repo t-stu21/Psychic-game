@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>JSHW</title>
+    
+    <script>
+
+alert('You have 10 guesses! Guess A-Z. GO!');
+    
+var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l',
+    'm','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+// Variables for scoring wins and losses. 
+var wins = 0;
+var losses = 0;
+var guesses = 10;
+
+var computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+
+    console.log(computerChoice)
+    
+    
+    
+    document.onkeypress = function(event) {
+    var userGuess = event.key;
+    
+
+    for (i=0, i<10; i++) {
+        console.log(i);
+    }
+
+
+
+
+    if(userGuess === computerChoice){
+        wins++;
+    }else{
+        guesses--;
+    }
+
+    if(guesses === 0){
+        losses++
+    }
+
+    document.getElementById('wins').innerHTML = "Wins: " + wins;
+    document.getElementById('losses').innerHTML = "losses: " + losses;
+    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+
+}
+    </script>
+    
+</head>
+<body>
+<h1>Are you a psycic?</h1>
+
+<br>
+<div class="userGuess">
+<p id="Wins: ">Wins:</p>
+
+<br>
+
+<p id="losses: ">losses:</p>
+
+<br>
+
+<p id="Guesses left: ">Guesses left:</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
